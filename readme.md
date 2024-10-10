@@ -70,12 +70,6 @@ financial-management/
 4. Lihat riwayat pengeluaran dengan memilih tab Harian, Mingguan, atau Bulanan
 5. Untuk mengedit keterangan pengeluaran, klik tombol "Edit" di samping keterangan pada tab Harian
 
-## Keamanan
-
-- Aplikasi ini menggunakan prepared statements untuk mencegah SQL injection
-- Input dari pengguna di-sanitize untuk mencegah XSS
-- Validasi input dilakukan di sisi server
-
 ## Keterbatasan
 
 - Aplikasi ini dirancang untuk penggunaan pribadi dan belum memiliki sistem login
