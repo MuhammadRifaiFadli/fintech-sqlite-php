@@ -2,7 +2,6 @@
 require_once 'functions.php';
 
 $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
-$success = false;
 $error = null;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
