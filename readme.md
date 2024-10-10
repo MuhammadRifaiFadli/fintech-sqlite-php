@@ -86,14 +86,5 @@ Kontribusi selalu diterima! Kamu bisa bantu berkontribusi untuk membuat aplikasi
 4. Push ke branch (`git push origin fitur-baru`)
 5. Buat Pull Request
 
-## Lisensi
 
-Proyek ini dilisensikan di bawah [MIT License](https://opensource.org/licenses/MIT).
-
-## Kontak
-
-Jika Anda memiliki pertanyaan atau saran, silakan buka issue di repository GitHub ini.
-
----
-
-Dibuat dengan ❤️ oleh [Nama Anda]
+Dibuat dengan ❤️ oleh mas pai MEWING🤫🧏‍♂️
