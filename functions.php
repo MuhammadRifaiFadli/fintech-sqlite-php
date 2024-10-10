@@ -77,5 +77,23 @@ function getPengeluaranBulanan() {
     return $db->query('SELECT * FROM pengeluaran WHERE strftime("%Y-%m", tanggal) = strftime("%Y-%m", "now") ORDER BY tanggal DESC');
 }
 
+function editKeteranganPengeluaran($id, $keterangan) {
+    $db = connectDB();
+    $stmt = $db->prepare('UPDATE pengeluaran SET keterangan = :keterangan WHERE id = :id');
+    $stmt->bindValue(':keterangan', $keterangan, SQLITE3_TEXT);
+    $stmt->bindValue(':id', $id, SQLITE3_INTEGER);
+    
+    return $stmt->execute();
+}
+
+// Fungsi untuk mendapatkan pengeluaran berdasarkan ID (jika belum ada)
+function getPengeluaranById($id) {
+    $db = connectDB();
+    $stmt = $db->prepare('SELECT * FROM pengeluaran WHERE id = :id');
+    $stmt->bindValue(':id', $id, SQLITE3_INTEGER);
+    $result = $stmt->execute();
+    return $result->fetchArray(SQLITE3_ASSOC);
+}
+
 initializeDB();
 ?>

@@ -140,3 +140,19 @@ input[type="text"] {
     text-align: center;
     color: #666;
 }
+
+.edit-btn {
+    background-color: #FFA500;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-size: 12px;
+    margin-left: 10px;
+}
+
+.keterangan-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: 2;
+}

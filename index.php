@@ -51,13 +51,20 @@ $activeTab = isset($_GET['tab']) ? $_GET['tab'] : 'harian';
             }
 
             // Menampilkan data pengeluaran
+          
             while ($row = $pengeluaran->fetchArray(SQLITE3_ASSOC)) {
                 echo "<div class='pengeluaran-item'>";
                 echo "<span class='tanggal'>" . date($dateFormat, strtotime($row['tanggal'])) . "</span>";
+                echo "<div class='keterangan-container'>";
                 echo "<span class='keterangan'>" . htmlspecialchars($row['keterangan']) . "</span>";
+                if ($activeTab === 'harian') {
+                    echo "<a href='edit-pengeluaran.php?id=" . $row['id'] . "' class='edit-btn'>Edit</a>";
+                }
+                echo "</div>";
                 echo "<span class='jumlah'>Rp " . number_format($row['jumlah'], 0, ',', '.') . "</span>";
                 echo "</div>";
             }
+
             ?>
         </div>
     </div>
