@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <form method="post">
             <div class="form-group">
                 <label for="jumlah">Jumlah Pengeluaran:</label>
-                <input type="number" id="jumlah" name="jumlah" step="1000" min="1000" required>
+                <input type="number" id="jumlah" name="jumlah" step="1000" min="1000" required autofocus>
             </div>
             <div class="form-group">
                 <label for="keterangan">Keterangan:</label>
