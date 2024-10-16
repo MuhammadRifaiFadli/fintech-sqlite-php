@@ -1,6 +1,6 @@
 <?php
 function connectDB() {
-    $db = new SQLite3('financial.db');
+    $db = new SQLite3('db_financial.db');
     return $db;
 }
 
