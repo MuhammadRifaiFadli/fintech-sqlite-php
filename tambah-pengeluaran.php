@@ -6,11 +6,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $keterangan = filter_input(INPUT_POST, 'keterangan', FILTER_SANITIZE_STRING);
     
     if ($jumlah !== false && $jumlah > 0 && !empty($keterangan)) {
-        if (tambahPengeluaran($jumlah, $keterangan)) {
-            header('Location: index.php');
-            exit;
+        $current_saldo = getSaldo();
+        if ($current_saldo - $jumlah >= 0) {
+            if (tambahPengeluaran($jumlah, $keterangan)) {
+                header('Location: index.php');
+                exit;
+            } else {
+                $error = "Gagal menambah pengeluaran";
+            }
         } else {
-            $error = "Gagal menambah pengeluaran";
+            $error = "Saldo tidak mencukupi untuk pengeluaran ini";
         }
     } else {
         $error = "Data tidak valid";
@@ -36,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <form method="post">
             <div class="form-group">
                 <label for="jumlah">Jumlah Pengeluaran:</label>
-                <input type="number" id="jumlah" name="jumlah" step="1000" min="1000" required autofocus>
+                <input type="number" id="jumlah" name="jumlah" step="0.01" min="0.01" required autofocus>
             </div>
             <div class="form-group">
                 <label for="keterangan">Keterangan:</label>
@@ -49,4 +54,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         
         <a href="index.php" class="back-link">Kembali ke Beranda</a>
     </div>
-</body
+</body>
+</html>

@@ -53,6 +53,12 @@ function tambahSaldo($jumlah) {
 
 function tambahPengeluaran($jumlah, $keterangan) {
     $db = connectDB();
+    $current_saldo = getSaldo();
+    
+    if ($current_saldo - $jumlah < 0) {
+        return false; // Saldo tidak cukup
+    }
+    
     $current_time = (new DateTime('now', new DateTimeZone('Asia/Jakarta')))->format('Y-m-d H:i:s');
    
     $stmt = $db->prepare('INSERT INTO pengeluaran (jumlah, keterangan, tanggal) VALUES (:jumlah, :keterangan, :tanggal)');
