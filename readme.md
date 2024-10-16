@@ -2,7 +2,8 @@
 
 Aplikasi web sederhana untuk manajemen keuangan pribadi yang memungkinkan pengguna untuk mencatat pemasukan dan pengeluaran serta melihat riwayatnya berdasarkan periode waktu.
 
-<img src="Ss.png">
+![screenshot](screenshot/ss.png)
+
 
 ## Fitur
 
